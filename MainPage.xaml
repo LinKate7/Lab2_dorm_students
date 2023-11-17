@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab2_dorm.MainPage">
+
+<ScrollView>
+<Frame Margin="10">
+<StackLayout Spacing="10">
+      <Button
+          Text="Choose xml file"
+          TextColor="White"
+          Clicked="Choose_Xml_File"
+          BackgroundColor="BlueViolet"/>
+
+      <Label Text="Select XML Analysing Method:" />
+        
+      <RadioButton x:Name="SaxRadioButton" Content="SAX" CheckedChanged="OnRadioButtonCheckedChanged" />
+      <RadioButton x:Name="DomRadioButton" Content="DOM" CheckedChanged="OnRadioButtonCheckedChanged" />
+      <RadioButton x:Name="LinqToXmlRadioButton" Content="Linq to XML" CheckedChanged="OnRadioButtonCheckedChanged" />
+
+      <Label Text="Student ID:"/>
+      <Picker x:Name="studentIdPicker" Title="Select a Student ID" SelectedIndexChanged="OnIdPickerSelectedIndexChanged" />
+
+      <Label Text="Searching element:"/>
+      <Picker x:Name="elementPicker" Title="Select element" SelectedIndexChanged="OnPickerSelectedIndexChanged"/>
+
+      <Label Text="Keyword for searching element: "/>  
+      <Entry x:Name="keywordEntry"
+             Placeholder="Enter the keyword"
+             PlaceholderColor="DarkGray"
+             Completed="OnEntryCompleted" />
+
+    <StackLayout Orientation="Horizontal" Spacing="10" >
+      <Button
+          Text="Search"
+          TextColor="White"
+          WidthRequest="100"
+          Clicked="OnSearchClicked"
+          BackgroundColor="BlueViolet"/>
+      <Button
+          Text="Clear"
+          TextColor="White"
+          WidthRequest="100"
+          Clicked="OnClearButtonClicked"
+          BackgroundColor="BlueViolet"/> 
+   </StackLayout>
+
+    <StackLayout x:Name="studentInfoLayout" IsVisible="false"></StackLayout>
+
+      <Button
+          Text="Add Xsl file"
+          TextColor="White"
+          Clicked="Add_Xsl_File"
+          BackgroundColor="BlueViolet"/>
+      <Button
+          Text="Convert to HTML"
+          TextColor="White"
+          Clicked="Convert_To_HTML"
+          BackgroundColor="BlueViolet"/>
+      
+      <Button
+          Text="Exit"
+          TextColor="White"
+          Clicked="OnExitButtonClicked"
+          BackgroundColor="BlueViolet"/>
+  </StackLayout>
+
+</Frame>
+</ScrollView>
+</ContentPage>
+
